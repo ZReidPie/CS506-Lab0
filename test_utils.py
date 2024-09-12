@@ -13,19 +13,33 @@ def test_dot_product():
     assert result == 32, f"Expected 32, but got {result}"
     
 def test_cosine_similarity():
-    ### YOUR CODE HERE
+    # Define two vectors
+    vector1 = np.array([1, 0, 0])
+    vector2 = np.array([0, 1, 0])
     
-    result = ### YOUR CODE HERE
+    # Calculate cosine similarity
+    result = cosine_similarity(vector1, vector2)
     
-    expected_result = ### YOUR CODE HERE
+    # The expected cosine similarity for orthogonal vectors is 0
+    expected_result = 0.0
     
     assert np.isclose(result, expected_result), f"Expected {expected_result}, but got {result}"
 
+
 def test_nearest_neighbor():
-    ### YOUR CODE HERE
+    # Define a target vector and a matrix of vectors
+    target_vector = np.array([1, 1, 1])
+    vectors = np.array([
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+        [1, 1, 1]
+    ])
     
-    result = ### YOUR CODE HERE
+    # Calculate the nearest neighbor
+    result = nearest_neighbor(target_vector, vectors)
     
-    expected_index = ### YOUR CODE HERE
+    # The nearest neighbor should be the last vector, which is at index 3
+    expected_index = 3
     
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"
